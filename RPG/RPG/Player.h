@@ -7,5 +7,25 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include 
-#endif // !PLAYER_h
+
+typedef struct Player {
+	int health;
+	char* name;
+	char* spec_abilityname;
+	int spec_ab_attack;
+	int normattack;
+	int defense;
+	class CharacterP;
+}Player;
+
+typedef enum PlayableChar {
+	EXINOS,
+	DONLONG,
+	CSINGCSONG,
+}class;
+
+Player* Const(class C);
+	
+
+
+#endif // !EXINOS_H
