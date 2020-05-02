@@ -1,0 +1,31 @@
+   SSS                A              PPPPPPPPPP          II  
+ SS   SS             AAA             PP       PP         II
+SS                  AA AA            PP        PP        II
+ SS                AA   AA           PP        PP        II  
+   SS             AA     AA          PP       PP         II
+     SS          AAAAAAAAAAA         PPPPPPPPP           II   
+      SS        AA         AA        PP                  II
+       SS      AA           AA       PP                  II
+SS    SS      AA             AA      PP                  II 
+   SSS       AA               AA     PP                  II
+
+
+
+FFFFFFFFFF    II         GGGGGGG        HH       HH     TTTTTTTTTTTTTTT 
+FF            II       GG      GG       HH       HH            TT
+FF            II      GG        GG      HH       HH            TT
+FF            II     GG                 HH       HH            TT
+FFFFFFFFFF    II     GG                 HHHHHHHHHHH            TT
+FF            II     GG      GGGGGG     HH       HH            TT  
+FF            II     GG          GG     HH       HH            TT
+FF            II      GG        GG      HH       HH            TT
+FF            II       GG      GG       HH       HH            TT
+FF            II        GGG  GGG        HH       HH            TT
+FF            II          GGGG          HH       HH            TT  
+
+
+
+
+
+
+
