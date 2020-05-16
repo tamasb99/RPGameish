@@ -11,7 +11,7 @@ SS    SS      AA             AA      PP                  II
 
 
 
-FFFFFFFFFF    II         GGGGGGG        HH       HH     TTTTTTTTTTTTTTT 
+FFFFFFFFFF    II         GGGGGGG        HH       HH     TTTTTTTTTTTTTTT  
 FF            II       GG      GG       HH       HH            TT
 FF            II      GG        GG      HH       HH            TT
 FF            II     GG                 HH       HH            TT
@@ -25,7 +25,8 @@ FF            II          GGGG          HH       HH            TT
 
 
 
-
+               Version 0.1
+               Developed by @BTB                                      
 
 
 

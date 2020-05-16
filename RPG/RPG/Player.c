@@ -1,8 +1,10 @@
 #include "Player.h"
 
-Player* Const(class c) {
+
+
+Player* Const(PlayableChar c) {
 	Player* P = (Player*)calloc(1, sizeof(Player));
-	if (!P) { printf("sikertelen jatekosletrehozas"); }
+	if (!P) { printf("sikertelen jatekosletrehozas"); exit(1); }
 	P->spec_abilityname = (char*)calloc(30, sizeof(char));
 	if (!P->spec_abilityname) { printf("sikertelen jatekosletrehozas"); }
 	P->name = (char*)calloc(30, sizeof(char));
@@ -47,11 +49,15 @@ Player* Const(class c) {
 }
 
 void DisplayStatsLeft(Player* P) {
-	printf("\t%s %i\n\t%s\n\n", P->name, P->health, P->spec_abilityname, P->spec_abilityname);
+	//printf("\t%s %i\n\t%s\n\n", P->name, P->health, P->spec_abilityname, P->spec_abilityname);
 }
 
-void DisplayStatsRightUp(Player* P) {
+/*void DisplayStatsRightUp(Player* P) {
 	//Console.SetCursorPosition(40, 40);
 	printf("\t%s %i\n\t%s", P->name, P->health, P->spec_abilityname, P->spec_abilityname);
 	//itt leragadtam nem tudom C-ben hogy mozgassam a kurzort szepen
+}*/
+
+void PrintPlayer(Player* P) {
+	
 }

@@ -8,6 +8,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+typedef enum PlayableChar {
+	EXINOS,
+	DONLONG,
+	CSINGCSONG,
+}PlayableChar;
+
+
 typedef struct Player {
 	int health;
 	char* name;
@@ -15,17 +23,13 @@ typedef struct Player {
 	int spec_ab_attack;
 	int normattack;
 	int defense;
-	class CharacterP;
+	PlayableChar CharacterP;
 }Player;
 
-typedef enum PlayableChar {
-	EXINOS,
-	DONLONG,
-	CSINGCSONG,
-}class;
 
-Player* Const(class C);
-	
+Player* Const(PlayableChar C);
+void DisplayStatsLeft(Player* P);
+
 
 
 #endif // !EXINOS_H

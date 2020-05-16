@@ -139,11 +139,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.c" />
+    <ClCompile Include="MainGame.c" />
     <ClCompile Include="Player.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MainGame.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Rpg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Gametitle.txt" />
+    <Text Include="map.txt" />
+    <Text Include="map2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

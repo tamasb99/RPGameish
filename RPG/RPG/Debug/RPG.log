@@ -1,0 +1,6 @@
+﻿  Main.c
+F:\GitHub\RPGameish\RPG\RPG\Main.c(15,10): warning C4473: 'scanf_s' : not enough arguments passed for format string
+F:\GitHub\RPGameish\RPG\RPG\Main.c(15,10): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+F:\GitHub\RPGameish\RPG\RPG\Main.c(15,10): message : the missing variadic argument 2 is required by format string '%c'
+F:\GitHub\RPGameish\RPG\RPG\Main.c(15,10): message : this argument is used as a buffer size
+  RPG.vcxproj -> F:\GitHub\RPGameish\RPG\Debug\RPG.exe
