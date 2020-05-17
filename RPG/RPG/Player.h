@@ -15,6 +15,8 @@ typedef enum PlayableChar {
 	CSINGCSONG,
 }PlayableChar;
 
+static int Px=8;
+static int Py=4;
 
 typedef struct Player {
 	int health;

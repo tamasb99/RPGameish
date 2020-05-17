@@ -43,5 +43,11 @@
     <Text Include="map2.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="map3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="highscore.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

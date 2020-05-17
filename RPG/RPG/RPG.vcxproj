@@ -148,8 +148,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Gametitle.txt" />
+    <Text Include="highscore.txt" />
     <Text Include="map.txt" />
     <Text Include="map2.txt" />
+    <Text Include="map3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
