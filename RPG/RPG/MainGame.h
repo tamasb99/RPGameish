@@ -1,4 +1,4 @@
-#pragma once
+
 #pragma once
 #ifndef MAINGAME_H
 #define MAINGAME_H
@@ -24,6 +24,8 @@ typedef struct Map {
  static int coins = 0;
  static int level = 1;
  static int over = 0;
+ static int maxenemy = 5;
+ static int highscore = 0;
  //static int end = 0;
 void DrawMainBar();
 void CreatePlayers(Map* map,int x,int y);
@@ -35,6 +37,7 @@ void SetScreenColour();
 void SetRandomBonusCoins(Map* map,int maxbonus);
 void PrintMainMenu();
 Map* SetLevel(const char filename);
-
+void SetRandomEnemy(Map* m);
+void DeleteEnemy(Map* m);
 
 #endif //!MAINGAME_H

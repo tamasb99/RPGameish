@@ -21,7 +21,7 @@ void DrawMainBar() {
 void DisplayPlayers() {
 	//for (int i = 0; i < 10; ++i) {
 		//DisplayStatsLeft(Players[i]);
-		printf("%i ",coins);
+	printf("HIGH SCORE: %i \t\tYOUR SCORE: %i", highscore, coins);
 }
 Map* ReadMap(const char* filename){
 	FILE* fin = fopen(filename, "rt");
@@ -46,13 +46,13 @@ void WriteMap(Map* map){
 	for (int i = 0; i < map->hossz; ++i) {
 		for (int j = 0; j < map->szel; ++j) {
 			if (map->palya[i][j] == '3' && (i == 0 || i == map->hossz - 1)) {
-				printf("-");
+				printf("_");
 			}
 			else if (map->palya[i][j] == '3' && (j == 0 || j == map->szel-1)) {
 				printf("|");
 			}
 			if (map->palya[i][j] == '1') {
-				printf("*");
+				printf("#");
 			}
 			if (map->palya[i][j] == '0') {
 				printf(" ");
@@ -67,17 +67,20 @@ void WriteMap(Map* map){
 			if (map->palya[i][j] == 'C') {
 				printf("$");
 			}
+			if (map->palya[i][j] == 'e') {
+				printf(">");
+			}
 
 		}
 		printf("\n");
 	}
 }
-void SetScreenColour(){
+void SetScreenColour(){ //szin bealitas
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	//SetConsole
-	SetConsoleTextAttribute(hStdOut, (BACKGROUND_GREEN));
+	SetConsoleTextAttribute(hStdOut, (BACKGROUND_RED| FOREGROUND_BLUE));
 }
-void SetRandomBonusCoins(Map* map,int maxbonus){
+void SetRandomBonusCoins(Map* map,int maxbonus){  //bonospontok generalasa
 	int i = 0;
 	srand(time(NULL));
 	while (i < maxbonus) {
@@ -101,6 +104,29 @@ void PrintMainMenu(){
 	printf("\t\t\t\t\t EXIT .Escape\n");
 
 }
+void SetRandomEnemy(Map* map){ //random poz-ra enemy-ket spawnol (kicsit nehez emiatt a jatek de eleg erdekesnek teszi igy
+	int i = 0;
+	srand(time(NULL));
+	while (i < maxenemy) {
+		int randy = (int)(rand() % (map->szel - 1)) + 1;
+		int randx = (int)(rand() % (map->hossz - 1)) + 1;
+		if (map->palya[randx][randy] == '0') {
+			++i;
+			map->palya[randx][randy] = 'e';
+			
+
+		}
+	}
+}
+void DeleteEnemy(Map* m) {
+	for (int i = 0; i < m->hossz; ++i) {
+		for (int j = 0; j < m->szel; ++j) {
+			if (m->palya[i][j] == 'e') {
+				m->palya[i][j] = '0';
+			}
+		}
+	}
+}
 /*Map* SetLevel(const char* filename)
 {
 	Map* m = ReadMap(filename);
@@ -117,26 +143,33 @@ int Movement(char option, Map* map) {
 	int veg = 0;
 	int elozoX = Px;
 	int elozoY = Py;
-	if (option == 's') {
-		Px += 1;
+	if (option == 's'||option=='S') {
+		Px += 1; 
 	}
-	if (option == 'a') {
-		Py -= 1;
+	if (option == 'a' || option == 'A') {
+		Py -= 1; 
 	}
-	if (option == 'w') {
-		Px -= 1;
+	if (option == 'w' || option == 'W') {
+		Px--;
 	}
-	if (option == 'd') {
-		Py += 1;
+	if (option == 'd' || option == 'D') {
+		Py += 1; 
 	}
 	if (map->palya[Px][Py] == '0') {
 		map->palya[Px][Py] = 'x';
 		map->palya[elozoX][elozoY] = '0';
 	}
-	if (map->palya[Px][Py] == '1' || map->palya[Px][Py] == '3') {
+	if (map->palya[Px][Py] == '1' || map->palya[Px][Py] == '3' || map->palya[Px][Py]=='e') { // ha falba megy vagy enemybe
 		system("CLS");
-		printf("Game over!!!\nYou lost."); 
-		printf("Your score was: %i", coins);
+		FILE* fin = fopen("highscore.txt", "r");
+		fscanf(fin, "%i", &highscore);
+		fclose(fin);
+		FILE* fout = fopen("highscore.txt", "w");
+		fprintf(fout, "%i", coins);
+		fclose(fout);
+		printf("Game over!!!\nYou lost.\n");
+		printf("HIGH SCORE: %i YOUR SCORE: %i", highscore,coins);
+		veg=2;
 		//exit(1);
 	}
 	if (map->palya[Px][Py] == 'C') {
